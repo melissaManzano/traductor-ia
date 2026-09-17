@@ -1,0 +1,20 @@
+# Entornos y credenciales
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Vercel
+.vercel/
+
+# Node (si se usa alguna herramienta de build en el futuro)
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
