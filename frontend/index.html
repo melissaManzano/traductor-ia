@@ -167,7 +167,39 @@
       </section>
       <section class="tab-pane fade panel-card" id="panel-document" role="tabpanel">
         <h2 class="panel-card__title">Traducción de documentos</h2>
-        <p class="panel-card__hint">Próximamente.</p>
+        <p class="panel-card__hint">
+          Sube un documento con título, párrafos o secciones. Formatos admitidos:
+          <strong>PDF, DOCX, TXT</strong> (máximo 10 MB).
+        </p>
+
+        <div class="upload-box" id="document-dropzone">
+          <input type="file" id="document-input" accept=".pdf,.docx,.txt" hidden />
+          <button type="button" class="btn btn-outline-app" id="document-choose-btn">
+            Seleccionar documento
+          </button>
+          <span id="document-filename" class="upload-box__filename"></span>
+        </div>
+
+        <div class="panel-card__actions">
+          <button id="document-translate-btn" class="btn btn-primary-app">Traducir documento</button>
+          <span id="document-status" class="status-text" role="status" aria-live="polite"></span>
+        </div>
+
+        <div id="document-result" class="result-block" hidden>
+          <p id="document-truncated-notice" class="truncated-notice" hidden>
+            El documento es extenso: se tradujo únicamente la primera parte del contenido.
+          </p>
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <h3 class="result-block__label">Contenido original</h3>
+              <pre id="document-original" class="lang-box lang-box--source lang-box--pre"></pre>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h3 class="result-block__label">Traducción</h3>
+              <pre id="document-translated" class="lang-box lang-box--target lang-box--pre"></pre>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="tab-pane fade panel-card" id="panel-image" role="tabpanel">
         <h2 class="panel-card__title">Traducción de imágenes</h2>
@@ -194,6 +226,8 @@
   <script src="assets/js/ui/ChatView.js"></script>
   <script src="assets/js/core/AudioModule.js"></script>
   <script src="assets/js/ui/AudioView.js"></script>
+  <script src="assets/js/core/DocumentModule.js"></script>
+  <script src="assets/js/ui/DocumentView.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

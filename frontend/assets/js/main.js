@@ -38,4 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---- Modulo 3: Audio (req. 1.3) ----
   new AudioView(new AudioModule(apiClient, window.APP_CONFIG.MAX_AUDIO_SIZE_MB));
+
+  // ---- Modulo 4: Documentos (req. 1.4) ----
+  new DocumentView(new DocumentModule(apiClient, window.APP_CONFIG.MAX_DOCUMENT_SIZE_MB));
 });
