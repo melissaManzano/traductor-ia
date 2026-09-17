@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, jsonify, request
 
 from core.exceptions import AppError, UnauthorizedOriginError
+from routes.text_routes import text_bp
 
 app = Flask(__name__)
 
@@ -38,6 +39,9 @@ def check_origin():
         origin = request.headers.get("Origin", "")
         if origin and origin != ALLOWED_ORIGIN:
             raise UnauthorizedOriginError("Origen no autorizado para consumir este servicio.")
+
+
+app.register_blueprint(text_bp, url_prefix="/api")
 
 
 @app.route("/api/ping", methods=["GET"])

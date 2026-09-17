@@ -83,7 +83,27 @@
       <!-- TODO: cada panel se completara en commits posteriores -->
       <section class="tab-pane fade show active panel-card" id="panel-text" role="tabpanel">
         <h2 class="panel-card__title">Traducción de texto</h2>
-        <p class="panel-card__hint">Próximamente.</p>
+        <p class="panel-card__hint">
+          Escribe en español o inglés. El sistema detecta el idioma de origen automáticamente.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-12 col-lg-6">
+            <label class="form-label fw-semibold" for="text-input">Texto original</label>
+            <textarea id="text-input" class="form-control lang-box lang-box--source" rows="8"
+              placeholder="Escribe aquí el texto que quieres traducir..."></textarea>
+          </div>
+          <div class="col-12 col-lg-6">
+            <label class="form-label fw-semibold" for="text-output">Traducción</label>
+            <textarea id="text-output" class="form-control lang-box lang-box--target" rows="8"
+              placeholder="Aquí aparecerá la traducción..." readonly></textarea>
+          </div>
+        </div>
+
+        <div class="panel-card__actions">
+          <button id="text-translate-btn" class="btn btn-primary-app">Traducir</button>
+          <span id="text-status" class="status-text" role="status" aria-live="polite"></span>
+        </div>
       </section>
       <section class="tab-pane fade panel-card" id="panel-chat" role="tabpanel">
         <h2 class="panel-card__title">Conversación bilingüe</h2>
@@ -113,5 +133,11 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api/ApiClient.js"></script>
+  <script src="assets/js/ui/UIStateManager.js"></script>
+  <script src="assets/js/core/Translator.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
