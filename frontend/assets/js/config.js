@@ -8,7 +8,7 @@
 window.APP_CONFIG = {
   // Reemplaza esta URL por la de tu backend ya desplegado en Vercel.
   // Ejemplo: "https://traductor-ia-backend.vercel.app"
-  BACKEND_BASE_URL: "https://TU-BACKEND.vercel.app",
+  BACKEND_BASE_URL:"https://backend-puce-two-15.vercel.app",
 
   MAX_AUDIO_SIZE_MB: 15,
   MAX_DOCUMENT_SIZE_MB: 10,
