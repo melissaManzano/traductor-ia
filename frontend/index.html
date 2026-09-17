@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Puente ES/EN — Traductor con Inteligencia Artificial</title>
 
+  <!-- Bootstrap 5 (requisito 2.2) -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+  <!-- Tipografias -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
@@ -18,6 +20,7 @@
 </head>
 <body>
 
+  <!-- ============ ENCABEZADO ============ -->
   <header class="app-header">
     <div class="container">
       <div class="app-header__row">
@@ -37,6 +40,7 @@
     </div>
   </header>
 
+  <!-- ============ AVISO DE PRIVACIDAD (req. 6.5) ============ -->
   <div class="privacy-notice">
     <div class="container">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -51,6 +55,7 @@
     </div>
   </div>
 
+  <!-- ============ NAVEGACION ENTRE MODULOS (req. 1.6) ============ -->
   <nav class="module-nav">
     <div class="container">
       <div class="nav nav-pills module-nav__pills" id="module-tab" role="tablist">
@@ -80,7 +85,7 @@
 
   <main class="container app-main">
     <div class="tab-content">
-      <!-- TODO: cada panel se completara en commits posteriores -->
+      <!-- ============ 1. TEXTO (req. 1.1) ============ -->
       <section class="tab-pane fade show active panel-card" id="panel-text" role="tabpanel">
         <h2 class="panel-card__title">Traducción de texto</h2>
         <p class="panel-card__hint">
@@ -105,6 +110,7 @@
           <span id="text-status" class="status-text" role="status" aria-live="polite"></span>
         </div>
       </section>
+      <!-- ============ 2. CHAT (req. 1.2) ============ -->
       <section class="tab-pane fade panel-card" id="panel-chat" role="tabpanel">
         <h2 class="panel-card__title">Conversación bilingüe</h2>
         <p class="panel-card__hint">
@@ -129,6 +135,7 @@
         </form>
         <span id="chat-status" class="status-text" role="status" aria-live="polite"></span>
       </section>
+      <!-- ============ 3. AUDIO (req. 1.3) ============ -->
       <section class="tab-pane fade panel-card" id="panel-audio" role="tabpanel">
         <h2 class="panel-card__title">Traducción de audio</h2>
         <p class="panel-card__hint">
@@ -165,6 +172,7 @@
           </div>
         </div>
       </section>
+      <!-- ============ 4. DOCUMENTOS (req. 1.4) ============ -->
       <section class="tab-pane fade panel-card" id="panel-document" role="tabpanel">
         <h2 class="panel-card__title">Traducción de documentos</h2>
         <p class="panel-card__hint">
@@ -201,6 +209,7 @@
           </div>
         </div>
       </section>
+      <!-- ============ 5. IMAGENES (req. 1.5) ============ -->
       <section class="tab-pane fade panel-card" id="panel-image" role="tabpanel">
         <h2 class="panel-card__title">Traducción de imágenes</h2>
         <p class="panel-card__hint">
@@ -245,6 +254,7 @@
     </div>
   </main>
 
+  <!-- ============ FOOTER (req. 2.1) ============ -->
   <footer class="app-footer">
     <div class="container app-footer__row">
       <span>Instituto Tecnológico Nacional de México — Campus Pachuca</span>
@@ -253,6 +263,7 @@
     </div>
   </footer>
 
+  <!-- ============ SCRIPTS ============ -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="assets/js/config.js"></script>

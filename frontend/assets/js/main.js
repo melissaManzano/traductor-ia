@@ -1,9 +1,10 @@
 /**
  * main.js
  * -------
- * Punto de arranque de la aplicacion (composition root). En esta version
- * solo se conecta el modulo de traduccion de texto simple; los demas
- * modulos se iran agregando en commits posteriores.
+ * Punto de arranque de la aplicacion. Instancia el ApiClient una sola vez
+ * y lo inyecta en cada modulo de dominio, y estos a su vez en cada vista.
+ * Este es el "composition root": el unico lugar donde se conectan todas
+ * las piezas (evidencia de bajo acoplamiento entre clases, req. 4.1.3).
  */
 document.addEventListener("DOMContentLoaded", () => {
   const apiClient = new ApiClient(window.APP_CONFIG.BACKEND_BASE_URL);

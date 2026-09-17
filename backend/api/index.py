@@ -1,11 +1,14 @@
 """
-Punto de entrada del backend, publicado en Vercel como funcion serverless
-de Python.
+Punto de entrada unico del backend, publicado en Vercel como funcion
+serverless de Python.
 
-En esta version inicial solo se expone un endpoint de salud (/api/ping)
-para validar que el despliegue en Vercel funciona antes de conectar
-cualquier logica de traduccion. Los blueprints de cada modulo se
-registraran en commits posteriores.
+Responsabilidades de este archivo (y solo estas):
+  1. Crear la app de Flask.
+  2. Registrar los Blueprints de cada modulo (texto, chat, audio, doc, img).
+  3. Configurar CORS restringido al dominio del frontend (req. 5.3).
+  4. Traducir cualquier AppError (o error inesperado) a JSON (req. 7.2).
+
+La logica de negocio real vive en `core/` y `routes/`, nunca aqui.
 """
 
 import os
