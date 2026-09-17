@@ -18,8 +18,9 @@ distintas para cada caso.
   idioma de origen.
 - Conversación tipo chat entre dos participantes que escriben en idiomas
   distintos, mostrando siempre el mensaje original y su traducción.
-- Traducción de audio: transcripción de voz, traducción del texto y
-  generación de un audio hablado con la traducción.
+- Traducción de audio: grabación de voz en vivo desde el navegador (o carga de un
+  archivo), transcripción, traducción del texto y generación de un audio hablado con
+  la traducción.
 - Traducción de documentos PDF, Word (.docx) y texto plano (.txt).
 - Traducción de texto contenido en imágenes (fotografías, capturas,
   señalizaciones, menús, etiquetas).
@@ -119,8 +120,8 @@ Inteligencia Artificial aplicada a las TIC — Ing. Víctor Manuel Pinedo Ferná
 
 ## URL pública de la aplicación
 
-- Frontend (GitHub Pages): `https://TU-USUARIO.github.io/traductor-ia/`
-- Backend (Vercel): `https://TU-BACKEND.vercel.app`
+- Frontend (GitHub Pages): `https://melissamanzano.github.io/traductor-ia/`
+- Backend (Vercel): `https://backend-puce-two-15.vercel.app`
 
 ---
 
@@ -140,16 +141,16 @@ python api/index.py
 
 ### Frontend
 
-Edita `frontend/assets/js/config.js` y apunta `BACKEND_BASE_URL` a
-`http://localhost:5000`, luego abre `frontend/index.html` con una extensión
+Edita `docs/assets/js/config.js` y apunta `BACKEND_BASE_URL` a
+`http://localhost:5000`, luego abre `docs/index.html` con una extensión
 de servidor local (por ejemplo Live Server de VS Code) para evitar
 problemas de CORS con `file://`.
 
 ### Despliegue
 
 1. Sube el repositorio a GitHub.
-2. En GitHub: **Settings → Pages** → publica la carpeta `frontend/`.
+2. En GitHub: **Settings → Pages** → publica la carpeta `docs/` (rama `main`).
 3. En Vercel: importa el repositorio con **Root Directory = `backend`** y
    configura la variable de entorno `OPENAI_API_KEY` (y `ALLOWED_ORIGIN`
    con la URL de GitHub Pages).
-4. Actualiza `frontend/assets/js/config.js` con la URL final de Vercel.
+4. Actualiza `docs/assets/js/config.js` con la URL final de Vercel.
