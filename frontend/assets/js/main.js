@@ -41,4 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---- Modulo 4: Documentos (req. 1.4) ----
   new DocumentView(new DocumentModule(apiClient, window.APP_CONFIG.MAX_DOCUMENT_SIZE_MB));
+
+  // ---- Modulo 5: Imagenes (req. 1.5) ----
+  new ImageView(new ImageModule(apiClient, window.APP_CONFIG.MAX_IMAGE_SIZE_MB));
 });

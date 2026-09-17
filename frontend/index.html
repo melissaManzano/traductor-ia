@@ -203,7 +203,44 @@
       </section>
       <section class="tab-pane fade panel-card" id="panel-image" role="tabpanel">
         <h2 class="panel-card__title">Traducción de imágenes</h2>
-        <p class="panel-card__hint">Próximamente.</p>
+        <p class="panel-card__hint">
+          Sube una fotografía de un aviso, señalización, captura, menú o etiqueta con texto.
+          Formatos admitidos: <strong>PNG, JPG, WEBP</strong> (máximo 8 MB).
+        </p>
+
+        <div class="upload-box" id="image-dropzone">
+          <input type="file" id="image-input" accept=".png,.jpg,.jpeg,.webp" hidden />
+          <button type="button" class="btn btn-outline-app" id="image-choose-btn">
+            Seleccionar imagen
+          </button>
+          <span id="image-filename" class="upload-box__filename"></span>
+        </div>
+
+        <div class="panel-card__actions">
+          <button id="image-translate-btn" class="btn btn-primary-app">Traducir imagen</button>
+          <span id="image-status" class="status-text" role="status" aria-live="polite"></span>
+        </div>
+
+        <div id="image-result" class="result-block" hidden>
+          <div class="row g-3">
+            <div class="col-12 col-lg-5">
+              <h3 class="result-block__label">Imagen</h3>
+              <img id="image-preview" class="image-preview" alt="Imagen cargada por el usuario" />
+            </div>
+            <div class="col-12 col-lg-7">
+              <div class="row g-3">
+                <div class="col-12">
+                  <h3 class="result-block__label">Texto detectado</h3>
+                  <p id="image-original" class="lang-box lang-box--source"></p>
+                </div>
+                <div class="col-12">
+                  <h3 class="result-block__label">Traducción</h3>
+                  <p id="image-translated" class="lang-box lang-box--target"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -228,6 +265,8 @@
   <script src="assets/js/ui/AudioView.js"></script>
   <script src="assets/js/core/DocumentModule.js"></script>
   <script src="assets/js/ui/DocumentView.js"></script>
+  <script src="assets/js/core/ImageModule.js"></script>
+  <script src="assets/js/ui/ImageView.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
