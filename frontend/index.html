@@ -107,7 +107,27 @@
       </section>
       <section class="tab-pane fade panel-card" id="panel-chat" role="tabpanel">
         <h2 class="panel-card__title">Conversación bilingüe</h2>
-        <p class="panel-card__hint">Próximamente.</p>
+        <p class="panel-card__hint">
+          Simula una conversación entre dos personas que hablan idiomas distintos. Cada mensaje
+          muestra quién lo envió, el texto original y su traducción.
+        </p>
+
+        <div id="chat-messages" class="chat-window" aria-live="polite"></div>
+
+        <form id="chat-form" class="chat-form">
+          <select id="chat-sender" class="form-select chat-form__sender" aria-label="Remitente">
+            <option value="Participante A">Participante A</option>
+            <option value="Participante B">Participante B</option>
+          </select>
+          <select id="chat-sender-lang" class="form-select chat-form__lang" aria-label="Idioma del mensaje">
+            <option value="es">Escribe en Español</option>
+            <option value="en">Escribe en Inglés</option>
+          </select>
+          <input id="chat-input" class="form-control chat-form__input" type="text"
+            placeholder="Escribe un mensaje..." autocomplete="off" />
+          <button id="chat-send-btn" class="btn btn-primary-app" type="submit">Enviar</button>
+        </form>
+        <span id="chat-status" class="status-text" role="status" aria-live="polite"></span>
       </section>
       <section class="tab-pane fade panel-card" id="panel-audio" role="tabpanel">
         <h2 class="panel-card__title">Traducción de audio</h2>
@@ -138,6 +158,8 @@
   <script src="assets/js/api/ApiClient.js"></script>
   <script src="assets/js/ui/UIStateManager.js"></script>
   <script src="assets/js/core/Translator.js"></script>
+  <script src="assets/js/core/ChatModule.js"></script>
+  <script src="assets/js/ui/ChatView.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

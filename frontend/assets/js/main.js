@@ -32,4 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       textUi.error(UIStateManager.messageFor(error));
     }
   });
+
+  // ---- Modulo 2: Chat (req. 1.2) ----
+  new ChatView(new ChatModule(apiClient));
 });
