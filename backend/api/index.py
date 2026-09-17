@@ -18,6 +18,7 @@ from flask import Flask, jsonify, request
 from core.exceptions import AppError, UnauthorizedOriginError
 from routes.text_routes import text_bp
 from routes.chat_routes import chat_bp
+from routes.audio_routes import audio_bp
 
 app = Flask(__name__)
 
@@ -44,6 +45,7 @@ def check_origin():
 
 app.register_blueprint(text_bp, url_prefix="/api")
 app.register_blueprint(chat_bp, url_prefix="/api")
+app.register_blueprint(audio_bp, url_prefix="/api")
 
 
 @app.route("/api/ping", methods=["GET"])

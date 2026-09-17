@@ -35,4 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---- Modulo 2: Chat (req. 1.2) ----
   new ChatView(new ChatModule(apiClient));
+
+  // ---- Modulo 3: Audio (req. 1.3) ----
+  new AudioView(new AudioModule(apiClient, window.APP_CONFIG.MAX_AUDIO_SIZE_MB));
 });
