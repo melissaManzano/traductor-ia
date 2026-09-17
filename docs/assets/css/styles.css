@@ -250,6 +250,26 @@ textarea.lang-box { resize: vertical; }
   color: var(--color-ink-soft);
 }
 
+.upload-box__divider {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.record-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-danger);
+  margin-right: 0.4rem;
+  animation: record-pulse 1s infinite;
+}
+
+@keyframes record-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
 .result-block { margin-top: 1.5rem; }
 .result-block__label {
   font-size: 0.85rem;

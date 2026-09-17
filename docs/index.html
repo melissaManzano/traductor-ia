@@ -148,8 +148,16 @@
           <button type="button" class="btn btn-outline-app" id="audio-choose-btn">
             Seleccionar archivo de audio
           </button>
+          <span class="upload-box__divider">o</span>
+          <button type="button" class="btn btn-outline-app" id="audio-record-btn">
+            <span id="audio-record-dot" class="record-dot" hidden></span>
+            <span id="audio-record-label">Grabar nota de voz</span>
+          </button>
+          <span id="audio-record-time" class="upload-box__filename" hidden>00:00</span>
           <span id="audio-filename" class="upload-box__filename"></span>
         </div>
+
+        <audio id="audio-record-preview" controls hidden class="mt-2 w-100"></audio>
 
         <div class="panel-card__actions">
           <button id="audio-translate-btn" class="btn btn-primary-app">Traducir audio</button>
