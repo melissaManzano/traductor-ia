@@ -1,0 +1,352 @@
+/* ==========================================================================
+   Sistema de diseño "Puente ES/EN"
+   Paleta: superficie fría clara + tinta azul-pizarra + acento verde-azulado
+   (idioma origen) y acento ámbar (idioma destino / accion). Evita el
+   cliché crema+terracota y el SaaS-card-kit: superficies planas, un solo
+   borde de 1px, radios modestos solo en elementos interactivos.
+   ========================================================================== */
+
+:root {
+  --color-bg: #F5F6F4;
+  --color-surface: #FFFFFF;
+  --color-ink: #16202A;
+  --color-ink-soft: #4B5A66;
+  --color-primary: #1F6F78;      /* idioma de origen / identidad principal */
+  --color-primary-dark: #164F56;
+  --color-accent: #E2A73E;       /* idioma de destino / llamado a la accion */
+  --color-accent-dark: #B9832A;
+  --color-border: #DCE1E0;
+  --color-danger: #B3261E;
+  --color-success: #1F7A4D;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+/* ---------------------------- Encabezado ---------------------------- */
+.app-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.6rem 0 1.2rem;
+}
+
+.app-header__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand__text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--color-ink);
+}
+
+.brand__langs {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.app-header__tagline {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------------------- Aviso de privacidad ---------------------------- */
+.privacy-notice {
+  background: #EFF6F5;
+  color: var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.85rem;
+}
+
+.privacy-notice .container {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.privacy-notice svg { flex: none; }
+
+/* ---------------------------- Navegacion de modulos ---------------------------- */
+.module-nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.module-nav__pills {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.65rem 0;
+  overflow-x: auto;
+}
+
+.module-nav__pill {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-ink-soft);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.module-nav__pill:hover {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.module-nav__pill.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* ---------------------------- Contenido principal ---------------------------- */
+.app-main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.panel-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+.panel-card__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.panel-card__hint {
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+  margin-bottom: 1.25rem;
+}
+
+.panel-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.1rem;
+}
+
+/* ---------------------------- Cajas de idioma origen/destino ---------------------------- */
+.lang-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  min-height: 3rem;
+  font-size: 0.97rem;
+  white-space: pre-wrap;
+}
+
+.lang-box--source {
+  border-left: 3px solid var(--color-primary);
+  background: #FAFCFC;
+}
+
+.lang-box--target {
+  border-left: 3px solid var(--color-accent);
+  background: #FFFCF5;
+}
+
+.lang-box--pre {
+  max-height: 320px;
+  overflow-y: auto;
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+textarea.lang-box { resize: vertical; }
+
+/* ---------------------------- Botones ---------------------------- */
+.btn-primary-app {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-primary-app:hover { background: var(--color-primary-dark); color: #fff; }
+
+.btn-primary-app:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-outline-app {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.btn-outline-app:hover { background: #EFF6F5; }
+
+/* ---------------------------- Estado / mensajes ---------------------------- */
+.status-text { font-size: 0.9rem; color: var(--color-ink-soft); }
+.status-text[data-state="loading"] { color: var(--color-primary-dark); }
+.status-text[data-state="success"] { color: var(--color-success); }
+.status-text[data-state="error"] { color: var(--color-danger); font-weight: 600; }
+
+.truncated-notice {
+  font-size: 0.85rem;
+  color: var(--color-accent-dark);
+  background: #FFF8EA;
+  border: 1px solid #F0DCA9;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.8rem;
+}
+
+/* ---------------------------- Carga de archivos ---------------------------- */
+.upload-box {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  background: var(--color-bg);
+}
+
+.upload-box__filename {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.result-block { margin-top: 1.5rem; }
+.result-block__label {
+  font-size: 0.85rem;
+  text-transform: none;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+.image-preview {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  max-height: 320px;
+  background: var(--color-bg);
+}
+
+/* ---------------------------- Chat ---------------------------- */
+.chat-window {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  min-height: 220px;
+  max-height: 420px;
+  overflow-y: auto;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-message {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  padding: 0.65rem 0.85rem;
+  max-width: 85%;
+}
+
+.chat-message--b { align-self: flex-end; }
+
+.chat-message__sender {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.15rem;
+}
+
+.chat-message__original { font-size: 0.95rem; }
+
+.chat-message__translation {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  border-top: 1px dashed var(--color-border);
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+}
+
+.chat-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.chat-form__input { flex: 1 1 220px; }
+.chat-form__sender, .chat-form__lang { flex: 0 0 auto; width: auto; }
+
+/* ---------------------------- Footer ---------------------------- */
+.app-footer {
+  background: var(--color-ink);
+  color: #E7ECEE;
+  padding: 1.1rem 0;
+  font-size: 0.85rem;
+}
+
+.app-footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  justify-content: space-between;
+}
+
+/* ---------------------------- Responsividad ---------------------------- */
+@media (max-width: 576px) {
+  .panel-card { padding: 1.1rem; }
+  .app-footer__row { flex-direction: column; }
+}
+
+/* ---------------------------- Accesibilidad: foco visible ---------------------------- */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
